@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DevBlog</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navigation bar -->
+  <header>
+    <div class="bar">
+      <a href="index.html" class="brand">DevBlog</a>
+      <button id="menuBtn" aria-label="Open menu">☰</button>
+      <nav id="nav">
+        <a href="index.html">Home</a>
+        <a href="#posts">Articles</a>
+        <a href="#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Learn web development, one post at a time</h1>
+      <p>Simple articles on HTML, CSS, JavaScript and more.</p>
+    </section>
+
+    <!-- Featured posts -->
+    <section>
+      <h2>Featured</h2>
+      <div id="featured" class="grid"></div>
+    </section>
+
+    <!-- All posts with search, categories and Load More -->
+    <section id="posts">
+      <h2>All articles</h2>
+      <input type="search" id="search" placeholder="Search articles...">
+      <div id="categories" class="chips"></div>
+      <p id="tagInfo" hidden></p>
+      <div id="grid" class="grid"></div>
+      <p id="empty" hidden>No articles found.</p>
+      <button id="loadMore" class="btn">Load more</button>
+    </section>
+
+    <section id="about">
+      <h2>About</h2>
+      <p>DevBlog is a small blog I built during my Frontend Development internship at CodSoft.</p>
+    </section>
+  </main>
+
+  <footer>© 2026 DevBlog · Built by P. Harsita for CodSoft</footer>
+
+  <script src="posts.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

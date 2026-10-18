@@ -1,0 +1,287 @@
+/* ---------- Colors ---------- */
+:root {
+  --ink: #1a2233;
+  --muted: #5f6b80;
+  --bg: #f4f6fb;
+  --surface: #ffffff;
+  --line: #dde3ee;
+  --brand: #3b5bdb;
+}
+
+/* ---------- Page setup ---------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Segoe UI", system-ui, sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+h2 {
+  margin: 0 0 16px;
+}
+
+/* ---------- Navigation bar ---------- */
+header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.bar {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--brand);
+}
+
+nav a {
+  margin-left: 20px;
+}
+
+nav a:hover {
+  color: var(--brand);
+}
+
+#menuBtn {
+  display: none;            /* only shown on phones */
+  font-size: 1.4rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  text-align: center;
+  padding: 40px 16px;
+}
+
+.hero h1 {
+  margin: 0 0 8px;
+  font-size: 2rem;
+}
+
+.hero p {
+  margin: 0;
+  color: var(--muted);
+}
+
+/* ---------- Cards grid ---------- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.card:hover {
+  box-shadow: 0 6px 18px rgba(26, 34, 51, 0.12);
+}
+
+.thumb {
+  height: 160px;
+  background-color: #9db0d9;      /* shown if the image is missing */
+  background-size: cover;
+  background-position: center;
+}
+
+.thumb.big {
+  height: 280px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+.body {
+  padding: 16px;
+}
+
+.body h3 {
+  margin: 6px 0;
+}
+
+.body p {
+  margin: 0 0 8px;
+  color: var(--muted);
+}
+
+.cat {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--brand);
+  text-transform: uppercase;
+}
+
+small {
+  color: var(--muted);
+}
+
+/* ---------- Tags, chips, buttons ---------- */
+.tags {
+  margin-top: 8px;
+}
+
+.tag {
+  font: inherit;
+  font-size: 0.8rem;
+  color: var(--muted);
+  background: #eef1f8;
+  border: none;
+  border-radius: 12px;
+  padding: 2px 10px;
+  margin: 0 4px 4px 0;
+  cursor: pointer;
+}
+
+.chips {
+  margin: 12px 0;
+}
+
+.chip {
+  font: inherit;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 6px 16px;
+  margin: 0 8px 8px 0;
+  cursor: pointer;
+}
+
+.chip.active {
+  background: var(--brand);
+  border-color: var(--brand);
+  color: #ffffff;
+}
+
+.btn {
+  display: inline-block;
+  font: inherit;
+  background: var(--brand);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+#loadMore {
+  display: block;
+  margin: 24px auto 0;
+}
+
+#loadMore[hidden],
+[hidden] {
+  display: none;
+}
+
+input[type="search"] {
+  width: 100%;
+  font: inherit;
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+/* ---------- Article page ---------- */
+article {
+  max-width: 700px;
+  margin: 16px auto 24px;
+  background: var(--surface);
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+}
+
+.back {
+  display: block;
+  width: fit-content;
+  margin: 0 auto 24px;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  text-align: center;
+  padding: 24px 16px;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+}
+
+/* ---------- Mobile (screens 640px wide or smaller) ---------- */
+@media (max-width: 640px) {
+  #menuBtn {
+    display: block;
+  }
+
+  nav {
+    display: none;             /* hidden until the ☰ button is tapped */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--surface);
+    border-bottom: 1px solid var(--line);
+    padding: 8px 16px;
+  }
+
+  nav.open {
+    display: block;
+  }
+
+  nav a {
+    display: block;
+    margin: 0;
+    padding: 10px 0;
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+/* ---------- Images ---------- */
+img.thumb{
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    background: #9db0d9;
+}
+
+img.thumb.missing {
+    color: #ffffff;
+    font-size: 0.8rem;
+}
+}
